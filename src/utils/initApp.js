@@ -2,16 +2,14 @@ import ConnectionDB from "../../DB/Connection.js"
 import { globalErrorHandling } from "../middleWare/errorHandling.js"
 import * as allRoutes from "../modules/app.routes.js"
 
-import cors from "cors"
 
 
-export const initApp =(express)=>{
-    const app = express()
-    const port = process.env.PORT || 5001
-   app.use(cors({}))
+export const initApp =(app)=>{
     
-    app.use(express.json({}))
-    ConnectionDB()
+    const port = process.env.PORT || 5001
+   
+    
+    
     // =============================================================================================
     app.get('/', (req, res) => res.send('Hello World!'))
     app.use('/user',allRoutes.userRouter )
