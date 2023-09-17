@@ -1,4 +1,3 @@
-import ConnectionDB from "../../DB/Connection.js"
 import { globalErrorHandling } from "../middleWare/errorHandling.js"
 import * as allRoutes from "../modules/app.routes.js"
 
