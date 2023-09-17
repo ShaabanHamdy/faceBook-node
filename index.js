@@ -9,7 +9,10 @@ app.use(express.json({}))
 app.use(cors())
 ConnectionDB()
 
-
+app.get('/hello', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.send('Hello World');
+})
 
 
 
