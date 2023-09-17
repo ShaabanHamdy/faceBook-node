@@ -3,4 +3,10 @@ import { initApp } from './src/utils/initApp.js'
 import { config } from 'dotenv'
 config({path:"./Config/.env"})
 
-initApp(express)
+const app = express()
+app.get('/', (req, res) => res.send('Hello World!'))
+
+
+
+
+initApp(app,express)

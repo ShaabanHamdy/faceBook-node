@@ -5,15 +5,14 @@ import * as allRoutes from "../modules/app.routes.js"
 import cors from "cors"
 
 
-export const initApp =(express)=>{
-    const app = express()
+export const initApp =(app,express)=>{
+    
     const port = process.env.PORT || 5001
    app.use(cors({}))
     
     app.use(express.json({}))
     ConnectionDB()
     // =============================================================================================
-    app.get('/', (req, res) => res.send('Hello World!'))
     app.use('/user',allRoutes.userRouter )
     app.use('/post',allRoutes.postRouter )
     
