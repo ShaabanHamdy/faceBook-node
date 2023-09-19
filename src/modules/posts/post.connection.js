@@ -1,10 +1,12 @@
-
+import moment from "moment"
 import postModel from '../../../DB/models/posts/post.model.js'
 import cloudinary from '../../utils/cloudinary.js'
 
 
 
 export const createPost = async (req, res, next) => {
+
+
 
     const { secure_url, public_id } =
         await cloudinary.uploader.upload(req.file?.path,
@@ -60,6 +62,10 @@ export const deleteAllPost = async (req, res, next) => {
 export const getPosts = async (req, res, next) => {
 
     const posts = await postModel.find()
+
+    //    const posts = postss.sort((a,b) => new Date(b.createdAt) + new Date(a.createdAt)   ) 
+                    const post = posts.map((elm)=>elm)
+                    console.log(post);
     if (!posts) {
         return next(new Error("there are not posts  "))
     }

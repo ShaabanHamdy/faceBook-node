@@ -4,7 +4,9 @@ const postSchema = new mongoose.Schema({
     description: String,
     mainImage: { type: Object },
 
-  
+
+}, {
+    timestamps: true
 });
 
 
